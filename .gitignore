@@ -1,5 +1,10 @@
 .Rproj.user
 .Rhistory
+.Rprofile
 .Rdata
 .httr-oauth
 .DS_Store
+config.yml
+rsconnect/
+**/* 2.*
+**/* 2
