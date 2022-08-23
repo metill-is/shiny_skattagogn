@@ -18,8 +18,13 @@ ui <- navbarPage("Skattagögn Hagstofunnar",
                  tabPanel(
                      title = "Skuldahlutfall",
                      skuldahlutfall_ui("skuldahlutfall")
-                 )
+                 ),
                  
+                 #### HAFÐU SAMBAND ####
+                 tabPanel(
+                     title = "Hafðu samband",
+                     hafdusamband_ui("hafdusamband")
+                 )
                  
                  
 )

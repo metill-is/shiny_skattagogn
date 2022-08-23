@@ -3,10 +3,10 @@
 
 # Skattagögn Hagstofunnar
 
-[![](figures/maelabord_screenshot.png)](https://bggj.is/pages/skattagogn)
+[![](figures/maelabord_screenshot.png)](https://bggj.is/skattagogn)
 
 Þetta er github síðan fyrir [mælaborðið mitt sem má finna á heimasíðu
-minni](https://bggj.is/pages/skattagogn).
+minni](https://bggj.is/skattagogn).
 
 Hérna tek ég saman allar helstu upplýsingarnar sem má finna í gögnum
 Hagstofu um [skuldir, eignir og eiginfjárstöðu heimila úr

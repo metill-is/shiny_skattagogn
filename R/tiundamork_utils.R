@@ -84,7 +84,7 @@ tiundamork_input_names <- c(
     "Verðbréf",
     "Skuldir alls",
     "Íbúðalán",
-    "Eigið fé alls (eignir - skuldir)",
+    "Eigið fé alls (Eignir - Skuldir)",
     "Eigið fé í fasteign",
     "Tekjur alls",
     "Atvinnutekjur",
