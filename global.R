@@ -66,7 +66,8 @@ global_caption <- "Mynd var fengin frá: https://www.bggj.is/skattagogn"
 
 ##### THEMES #####
 # Making a light and dark theme in case I want to offer the option later
-light <- bs_theme(bootswatch = "flatly", primary = "#08306b")
+light <- bs_theme(bootswatch = "flatly", primary = "#08306b",
+                  base_font = "Segoe UI", code_font = "SFMono-Regular", heading_font = "Lato")
 dark <- bs_theme(bootswatch = "superhero", primary = "#08306b")
 theme_set(theme_half_open(font_size = 12))
 thematic_shiny()
