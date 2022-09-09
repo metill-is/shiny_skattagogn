@@ -25,6 +25,11 @@ tbl(con, "skyribreytur_skuldahlutfoll") |>
     collect() |> 
     write_feather("data/skuldahlutfall.feather")
 
+tbl(con, "fjolskyldugerd_aldur_buseta") |> 
+    filter(str_detect(skyribreyta, "[0-9]+")) |> 
+    collect() |> 
+    write_feather("data/aldurshopar.feather")
+
 
 dbDisconnect(con)
 

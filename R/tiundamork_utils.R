@@ -1,6 +1,9 @@
 tiundamork_dreifing_fig <- function(data, input, ...) {
     data |> 
         mutate(p = ifelse(value < 0, 0, p)) |> 
+        group_by(ar, name) |> 
+        mutate(p = p / sum(p)) |> 
+        ungroup() |> 
         ggplot(aes(ar, p, text = text)) +
         geom_area(aes(fill = tiundarhluti, group = tiundarhluti, col = tiundarhluti), position = "fill") +
         scale_x_continuous() +
@@ -18,7 +21,7 @@ tiundamork_dreifing_fig <- function(data, input, ...) {
 
 tiundamork_magn_fig <- function(data, input, ...) {
     data |> 
-        mutate(plot_value= ifelse(plot_value < 0, 0, plot_value)) |> 
+        mutate(plot_value = ifelse(plot_value < 0, 0, plot_value)) |> 
         ggplot(aes(ar, plot_value, text = text)) +
         geom_area(aes(fill = tiundarhluti, col = tiundarhluti, group = tiundarhluti), position = "stack") +
         scale_x_continuous() +
@@ -84,6 +87,7 @@ tiundamork_input_names <- c(
     "Verðbréf",
     "Skuldir alls",
     "Íbúðalán",
+    "Vaxtagjöld v/íbúðalána",
     "Eigið fé alls (Eignir - Skuldir)",
     "Eigið fé í fasteign",
     "Tekjur alls",

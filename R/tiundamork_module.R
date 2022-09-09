@@ -68,7 +68,9 @@ tiundamork_server <- function(id) {
                 rename(fjoldi = "Fjöldi í hóp") |> 
                 pivot_longer(c(-ar, -tiundarhluti, -fjoldi, -cpi, -tiundarbreyta)) |> 
                 group_by(ar, name) |> 
-                mutate(p = value / sum(value)) |> 
+                mutate(p = value / sum(value),
+                       p = ifelse(value < 0, 0, p),
+                       p = p / sum(p)) |> 
                 ungroup() |> 
                 mutate(value_adj = value / cpi)
             
@@ -83,7 +85,7 @@ tiundamork_server <- function(id) {
                                     "Hlutfall: ", percent(p, accuracy = 0.1, big.mark = ".", decimal.mark = ","), "\n",
                                     "Samtals: ", number(plot_value, suffix = " mkr", big.mark = ".", decimal.mark = ",")),
                        text = case_when(
-                           str_detect(name, "[Tt]ekjur") ~ str_c(text, "\n", 
+                           str_detect(name, "[Tt]ekjur|Vaxtagj") ~ str_c(text, "\n", 
                                                                  "Á mann (á mánuði): ", number(per_pers / 12, suffix = " kr", accuracy = 1, 
                                                                                                big.mark = ".", decimal.mark = ",")),
                            TRUE ~ str_c(text, "\n", 

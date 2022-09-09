@@ -71,12 +71,20 @@ aldurshopar_verdlag <- function(input, ...) {
 }
 
 
-aldurshopar_input_names <- c("Eignir alls",
-                             "Verðbréf", 
-                             "Fasteignir",
-                             "Ökutæki", 
-                             "Innlán",
-                             "Skuldir alls",
-                             "Íbúðalán", 
-                             "Eigið fé í fasteign", 
-                             "Eigið fé alls (eignir - skuldir)")
+aldurshopar_input_names <- c(
+    "Eignir alls",
+    "Fasteignir",
+    "Verðbréf",
+    "Innlán",
+    "Ökutæki",
+    "Skuldir alls",
+    "Íbúðalán",
+    "Eigið fé alls (Eignir - Skuldir)",
+    "Eigið fé í fasteign",
+    "Tekjur alls",
+    "Atvinnutekjur",
+    "Fjármagnstekjur",
+    "Skattar alls",
+    "Vaxtagjöld v/íbúðalána",
+    "Ráðstöfunartekjur (Tekjur - Skattar)"
+)
