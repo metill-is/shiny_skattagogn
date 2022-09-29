@@ -19,6 +19,7 @@ library(shinycssloaders)
 library(DBI)
 library(feather)
 library(visitalaneysluverds)
+library(metill)
 
 shinyOptions(plot.autocolor = TRUE)
 
@@ -59,20 +60,37 @@ sidebar_info <- paste0(
     br(" "),
     h5("Höfundur:"),
     p("Brynjólfur Gauti Guðrúnar Jónsson"),
-    HTML("<a href='https://github.com/bgautijonsson/skattagogn'> Kóði og gögn </a>")
+    HTML("<a href='https://github.com/bgautijonsson/skattagogn' target='_top'> Kóði og gögn </a>")
 )
 # This is the caption for plots
-global_caption <- "Mynd var fengin frá: https://www.bggj.is/skattagogn"
+global_caption <- ""
+
 
 ##### THEMES #####
 # Making a light and dark theme in case I want to offer the option later
-light <- bs_theme(bootswatch = "flatly", primary = "#08306b",
-                  base_font = "Segoe UI", code_font = "SFMono-Regular", heading_font = "Lato")
-dark <- bs_theme(bootswatch = "superhero", primary = "#08306b")
-theme_set(theme_half_open(font_size = 12))
-thematic_shiny()
+theme_set(theme_metill())
 
 
 
+bs_global_theme(
+    bootswatch = "flatly"
+)
+
+bs_global_add_variables(
+    primary = "#484D6D",
+    secondary = "#969696",
+    success = "#969696",
+    # danger = "#FF8CC6",
+    # info = "#FF8CC6",
+    light = "#faf9f9",
+    dark = "#484D6D",
+    bg = "#faf9f9",
+    fg = "#737373",
+    "body-bg" = "#faf9f9",
+    base_font = "Lato",
+    heading_font = "Segoe UI",
+    "navbar-brand-font-family" = "Playfair Display",
+    code_font = "SFMono-Regular"
+)
 
 

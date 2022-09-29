@@ -42,19 +42,7 @@ tiundamork_make_plotly <- function(plot, ...) {
         plot, 
         tooltip = "text"
     ) |> 
-        layout(hoverlabel = list(align = "left"),
-               margin = list(
-                   t = 60,
-                   r = 0,
-                   b = 120,
-                   l = 0
-               ),
-               annotations = list(
-                   list(x = 0.8, xanchor = "right", xref = "paper",
-                        y = -0.15, yanchor = "bottom", yref = "paper",
-                        showarrow = FALSE,
-                        text = global_caption)
-               ))
+        layout(hoverlabel = list(align = "left"))
 }
 
 tiundamork_tiundabreytur_eignafall <- c(

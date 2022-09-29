@@ -4,7 +4,6 @@ aldurshopar_ui <- function(id) {
     sidebarLayout(
         sidebarPanel(
             width = 3,
-            tags$style(type="text/css", "body {padding-top: 80px;}"),
             selectInput(
                 inputId = NS(id, "name"),
                 label = "Breyta til að skoða",

@@ -4,7 +4,6 @@ tiundamork_ui <- function(id) {
     sidebarLayout(
         sidebarPanel(
             width = 3,
-            tags$style(type="text/css", "body {padding-top: 80px;}"),
             selectInput(
                 inputId = NS(id, "tiundarbreyta"),
                 label = "Breyta til að skipta í tíundamörk",
@@ -35,8 +34,6 @@ tiundamork_ui <- function(id) {
                 ),
                 class = "center", align = "middle"
             ),
-            br(" "),
-            p(tiundir_text),
             HTML(sidebar_info)
         ),
         

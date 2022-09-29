@@ -10,8 +10,6 @@ function(input, output) {
     
     skuldahlutfall_server("skuldahlutfall")
     
-    #### HAFÐU SAMBAND #### 
-    hafdusamband_ui("hafdusamband")
     
 }
 
