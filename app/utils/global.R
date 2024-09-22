@@ -18,8 +18,7 @@ shinyOptions(plot.autocolor = TRUE)
 
 #### DATA ####
 
-tiundamork <- read_parquet("data/tiundamork.parquet") |>
-  filter(tiundarhluti != "Alls")
+d_deciles <- arrow::read_parquet("data/deciles.parquet")
 
 ##### Sidebar Info and Plot Captions #####
 # This is pasted into the sidebar on each page

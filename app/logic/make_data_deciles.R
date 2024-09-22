@@ -2,6 +2,7 @@ library(arrow)
 library(tidyverse)
 library(pxweb)
 library(metill)
+library(here)
 
 base_url <- paste("https://px.hagstofa.is:443/pxis/api/v1/is",
   "Samfelag/lifskjor/5_skuldastada_heimili/1_skuldir_eignir/",
@@ -100,7 +101,12 @@ d_equity <- pxweb_get(
   janitor::clean_names() |>
   rename(name = 3, value = 4) |>
   mutate(ar = parse_number(ar)) |>
-  mutate(tiundarbreyta = "Eigið fé")
+  mutate(tiundarbreyta = "Eigið fé") |>
+  pivot_wider() |>
+  rename(fjoldi = "Fjöldi í hóp") |>
+  pivot_longer(
+    c(-ar, -tiundarhluti, -tiundarbreyta, -fjoldi)
+  )
 
 d_revenue <- pxweb_get(
   url = urls$revenue,
@@ -158,4 +164,4 @@ d <- bind_rows(
   )
 
 d |>
-  write_parquet("data/deciles.parquet")
+  write_parquet(here("app", "www", "data", "deciles.parquet"))
